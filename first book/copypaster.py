@@ -1,10 +1,9 @@
 import keyboard
 import mouse
 import time
+import content
 
-rawtext = open("text.txt", "r")
-bibletext = rawtext.read()
-rawtext.close()
+bibletext = content.giveout()
 number = 0
 skip = 0
 limitnumb = 101
@@ -21,13 +20,6 @@ for each in pages:
     if number == limitnumb:
         keyboard.wait("f5")
         number = 0
-    each = each.replace("&", "εὐαγγέλιον")
-    each = each.replace("â– ", block)
-    each = each.replace("â€™", "'")
-    each = each.replace("â€™", "”")
-    each = each.replace("â€œ", "”")
-    each = each.replace("â€", "”")
-    each = each.replace("Ã©", "é")
     number += 1
     time.sleep(0.1)
     keyboard.write(each[1:])
